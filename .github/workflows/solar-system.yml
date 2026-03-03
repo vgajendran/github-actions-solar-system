@@ -32,11 +32,12 @@ jobs:
           run: npm test
           
         - name: Archive Test Result
-          continue-on-error: true
+          if: always() 
           uses: actions/upload-artifact@v4
           with:
             name: Mocha-Test-Result
             path: test-results.xml
+
 
 
 
